@@ -1,0 +1,131 @@
+.background {
+    width: 100%;
+    min-height: 800px;
+    background-image: url('./media/homebg.jpg');
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    z-index: 0;
+}
+.background_logo {
+    position: absolute;
+    width: 20em;
+    height: 8em;
+    margin-top: .8em;
+    left: 50%;
+    transform: translate(-50%);
+    -webkit-transform: translate(-50%);
+    -moz-transform: translate(-50%);
+    -ms-transform: translate(-50%);
+    -o-transform: translate(-50%);
+    z-index: 1; /* Mayor z-index que el fondo */
+    @media screen and (min-width: 546px){
+        width: 35em;
+        height: 10em;
+        margin-top: 2em; 
+    }
+}
+
+.background_logo:hover{
+    cursor: pointer;
+    filter: saturate(200%);
+    -webkit-filter: saturate(200%);
+}
+.home_poke_bar{
+    position: absolute;
+    min-width: 100%;
+    height: 3rem;
+    bottom: 0;
+    z-index: 1;
+    @media screen and (min-width: 546px){
+        height: 8rem; 
+    }
+}
+
+.form_container {
+    width: 80%;
+    height: 60%;
+    border: solid .2em white;
+    position: absolute;
+    border-radius: .5em;
+    z-index: 2;
+    left: 50%;
+    top: 52%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    -webkit-border-radius: .5em;
+    -moz-border-radius: .5em;
+    -ms-border-radius: .5em;
+    -o-border-radius: .5em;
+    box-shadow: 4px 4px 8px 8px rgba(255, 255, 255, 0.4) inset;
+    @media screen and (min-width: 1200px){
+        width: 50%;
+        height: 50%;
+    }
+}
+.title_logo {
+    text-align: center;
+    margin-top: 1em;
+    color: yellow;
+    font-size: 3em;
+    font-weight: 900;
+    -webkit-text-stroke: blue 3px;   
+}
+.subtitle_logo{
+    text-align: center;
+    color: white;
+    font-size: 1.5em;
+    font-weight: 500;
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 1);
+}
+.form_input_home{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.home_input {
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
+    margin-top: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: black 2px solid;
+    border-radius: .5em;
+    -webkit-border-radius: .5em;
+    -moz-border-radius: .5em;
+    -ms-border-radius: .5em;
+    -o-border-radius: .5em;
+    padding: 0.5em;
+    font-weight: 700;
+    color: red;
+}
+.button_input{
+    width: 5em;
+    height: 3em;
+    background-color: rgb(255, 50, 60);
+    color: black;
+    box-shadow: 2px 2px 6px 6px rgba(0, 0, 0, .5) inset;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    margin-top: 2em;
+    border-radius: 2em;
+    -webkit-border-radius: 2em;
+    -moz-border-radius: 2em;
+    -ms-border-radius: 2em;
+    -o-border-radius: 2em;
+    cursor: pointer;
+    text-transform: uppercase;
+    
+}
+.button_input:active {
+    transform: translateY(2px);
+}
+

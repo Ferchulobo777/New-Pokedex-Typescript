@@ -1,0 +1,9 @@
+.poke_container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5em;
+  justify-content: center;
+  margin-bottom: 3em;
+  margin-top: 3em;
+}

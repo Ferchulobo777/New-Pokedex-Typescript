@@ -1,0 +1,217 @@
+.container_movements{
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: .6em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    height: 40em;
+    justify-content: space-around;
+    align-items: center;
+    @media screen and (min-width: 546px){
+        height: 40em;
+    }
+}
+.container_movements_gral{
+    width: 8.5em;
+    height: 1.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: .4em;
+    font-weight: 700;
+    border: 2px solid;
+    border-radius: 10px;
+    @media screen and (min-width: 546px){
+        font-size: .8em;
+    }
+}
+
+.bg-grass {
+    border-radius: 4px 4px 0px 0px;
+    background-image: linear-gradient(180deg, #7EC6C5 0%, #ABDAC6 47.92%, #CAE099 100%);
+ }
+ .bg-fire{
+     border-radius: 4px 4px 0px 0px;
+     background-image: linear-gradient(179deg, #F96D6F 9.38%, #E35825 27.08%, #E8AE1B 60.42%);
+ }
+ .bg-water{
+     border-radius: 4px 4px 0px 0px;
+     background-image: linear-gradient(180deg, #133258 0%, #1479FB 44.32%, #82B2F1 100%);
+ }
+ .bg-electric {
+     border-radius: 4px 4px 0px 0px;
+     background-image: linear-gradient(180deg, #F6D80F 0%, #F9E83B 23.44%, #FDE76A 58.33%);
+   }
+ .bg-ground{
+     border-radius: 4px 4px 0px 0px;
+     background-image: linear-gradient(180deg, #654008 0%, #895C1A 23.44%, #D69638 58.33%);
+ }
+ .bg-bug{
+     border-radius: 4px 4px 0px 0px;
+     background-image: linear-gradient(180deg, #62DB60 12.33%, #3BB039 36.98%, #AAFFA8 100%);
+     -webkit-border-radius: 4px 4px 0px 0px;
+     -moz-border-radius: 4px 4px 0px 0px;
+     -ms-border-radius: 4px 4px 0px 0px;
+     -o-border-radius: 4px 4px 0px 0px;
+ }
+ .bg-normal{
+     border-radius: 4px 4px 0px 0px;
+     background-image: linear-gradient(181deg, #735259 24.28%, #BC6B7C 74.77%, #7C3F4C 100%);
+ }
+ .bg-fighting{
+     border-radius: 4px 4px 0px 0px;
+     background-image: linear-gradient(179deg, #96402A 0%, #F1613C 70.83%, #CB735D 100%);
+ }
+ .bg-poison{
+     border-radius: 4px 4px 0px 0px;
+     background-image: linear-gradient(179deg, #5B3184 0%, #A564E3 32.66%, #CE9BFF 57.91%);
+ }
+ .bg-ghost{
+     border-radius: 4px 4px 0px 0px;
+     background-image: linear-gradient(179deg, #323569 0%, #454AA8 27.25%, #787DDA 57.91%);
+     -webkit-border-radius: 4px 4px 0px 0px;
+     -moz-border-radius: 4px 4px 0px 0px;
+     -ms-border-radius: 4px 4px 0px 0px;
+     -o-border-radius: 4px 4px 0px 0px;
+ }
+ .bg-psychic{
+     border-radius: 4px 4px 0px 0px;
+     background-image: linear-gradient(180deg, #E52D2D 0%, #D13E3E 23.44%, #F07F7F 58.33%);
+ }
+ .bg-rock{
+     border-radius: 4px 4px 0px 0px;
+     background-image: linear-gradient(179deg, #7E7E7E 0%, #8D8D94 27.25%, #D3D3D3 57.91%);
+ }
+ .bg-dark{
+     border-radius: 4px 4px 0px 0px;
+     background-image: linear-gradient(179deg, #030706 0%, #0D1211 27.25%, #5A5E5D 57.91%);
+     -webkit-border-radius: 4px 4px 0px 0px;
+     -moz-border-radius: 4px 4px 0px 0px;
+     -ms-border-radius: 4px 4px 0px 0px;
+     -o-border-radius: 4px 4px 0px 0px;
+ }
+ .bg-ice{
+     border-radius: 4px 4px 0px 0px;
+     background-image: linear-gradient(179deg, #6FBEDF 0%, #64CBF5 23.44%, #BDEBFE 58.33%);
+ }
+ .bg-steel {
+     border-radius: 4px 4px 0px 0px;
+     background-image: linear-gradient(180deg, #5E736C 0%, #728881 23.44%, #A8A8A8 58.33%);
+ }
+ .bg-dragon{
+     border-radius: 4px 4px 0px 0px;
+     background-image: linear-gradient(180deg, #478A93 0%, #56A4AE 23.44%, #A2BEC1 58.33%);
+ }
+ .bg-fairy {
+     border-radius: 4px 4px 0px 0px;
+     background-image: linear-gradient(180deg, #971B45 0%, #C23867 23.44%, #CD7D98 58.33%);
+     -webkit-border-radius: 4px 4px 0px 0px;
+     -moz-border-radius: 4px 4px 0px 0px;
+     -ms-border-radius: 4px 4px 0px 0px;
+     -o-border-radius: 4px 4px 0px 0px;
+ }
+ .color-grass{
+     color: #ABDAC6;
+ }
+ .color-fire{
+     color: #E35825;
+ }
+ .color-water{
+     color: #1479FB;
+ }
+ .color-electric{
+     color: #F9E83B;
+ }
+ .color-ground{
+     color: #895C1A;
+ }
+ .color-bug{
+     color: #3BB039;
+ }
+ .color-normal{
+     color: #BC6B7C;
+ }
+ .color-fighting{
+     color: #F1613C;
+ }
+ .color-poison{
+     color: #A564E3;
+ }
+ .color-ghost{
+     color: #454AA8;
+ }
+ .color-psychic{
+     color: #D13E3E;
+ }
+ .color-rock{
+     color: #8D8D94;
+ }
+ .color-dark{
+     color: #0D1211;
+ }
+ .color-ice{
+     color: #64CBF5;
+ }
+ .color-dragon{
+     color: #56A4AE;
+ }
+ .color-steel{
+     color: #728881;
+ }
+ .color-fairy{
+     color: #C23867;
+ }
+ .border-grass{
+     border-color: #ABDAC6;
+ }
+ .border-fire{
+     border-color: #E35825;
+ }
+ .border-water{
+     border-color: #1479FB;
+ }
+ .border-electric{
+     border-color: #F9E83B;
+ }
+ .border-ground{
+     border-color: #895C1A;
+ }
+ .border-bug{
+     border-color: #3BB039;
+ }
+ .border-normal{
+     border-color: #BC6B7C;
+ }
+ .border-fighting{
+     border-color: #F1613C;
+ }
+ .border-poison{
+     border-color: #A564E3;
+ }
+ .border-ghost{
+     border-color: #454AA8;
+ }
+ .border-psychic{
+     border-color: #D13E3E;
+ }
+ .border-rock{
+     border-color: #8D8D94;
+ }
+ .border-dark{
+     border-color: #0D1211;
+ }
+ .border-ice{
+     border-color: #64CBF5;
+ }
+ .border-dragon{
+     border-color: #56A4AE;
+ }
+ .border-steel{
+     border-color: #728881;
+ }
+ .border-fairy{
+     border-color: #C23867;
+ }
+ 
