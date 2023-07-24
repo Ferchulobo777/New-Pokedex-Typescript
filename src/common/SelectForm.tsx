@@ -1,5 +1,4 @@
 import React, { ChangeEvent } from "react";
-import useFetch from "../hooks/useFetch";
 import './PokedexLayout.css';
 
 interface SelectFormProps {

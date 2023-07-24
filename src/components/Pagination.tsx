@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import './Pokedex/styles/Pagination.css';
 
 interface PaginationProps {

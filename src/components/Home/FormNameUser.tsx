@@ -1,4 +1,4 @@
-import React, { useRef, FormEvent } from 'react';
+import { useRef, FormEvent } from 'react';
 import { useDispatch } from 'react-redux';
 import { setTrainerName } from '../../store/slices/trainerName.slice';
 import { useNavigate } from 'react-router-dom';
