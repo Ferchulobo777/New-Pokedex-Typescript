@@ -1,12 +1,15 @@
-import React from "react";
+import React, { ChangeEvent } from "react";
 import useFetch from "../hooks/useFetch";
-import './PokedexLayout.css'
+import './PokedexLayout.css';
 
-const SelectForm = ({ pokemonPerPage, setPokemonPerPage }) => {
-  const url = "https://pokeapi.co/api/v2/pokemon?limit=10000&offset=0";
-  const [pokemon, getAllPokemon] = useFetch(url);
+interface SelectFormProps {
+  pokemonPerPage: number;
+  setPokemonPerPage: React.Dispatch<React.SetStateAction<number>>;
+}
 
-  const handleChange = (event) => {
+const SelectForm: React.FC<SelectFormProps> = ({ pokemonPerPage, setPokemonPerPage }) => {
+
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     const selectedValue = parseInt(event.target.value);
     setPokemonPerPage(selectedValue);
   };

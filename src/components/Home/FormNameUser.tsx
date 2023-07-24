@@ -1,8 +1,8 @@
-import { useRef, FormEvent } from 'react';
+import React, { useRef, FormEvent } from 'react';
 import { useDispatch } from 'react-redux';
 import { setTrainerName } from '../../store/slices/trainerName.slice';
 import { useNavigate } from 'react-router-dom';
-import '../../views/styles/Home.css'
+import '../../views/styles/Home.css';
 
 const FormNameUser = () => {
   const inputName = useRef<HTMLInputElement>(null);
@@ -10,10 +10,12 @@ const FormNameUser = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const handleSubmit = (e: FormEvent) => {
-    e.preventDefault()
-    dispatch(setTrainerName(inputName.current.value.trim()))
-    navigate('/pokedex')
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (inputName.current) {
+      dispatch(setTrainerName(inputName.current.value.trim()));
+      navigate('/pokedex');
+    }
   };
 
   return (
