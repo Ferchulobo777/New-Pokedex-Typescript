@@ -4,8 +4,8 @@ import { Outlet } from 'react-router-dom';
 import Header from './Header';
 import Footer from './Footer';
 
-const PokedexLayout = () => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+const PokedexLayout: React.FC = () => {
+  const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
 
   const toggleDarkMode = () => {
     setIsDarkMode((prevMode) => !prevMode);

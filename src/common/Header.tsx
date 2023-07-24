@@ -1,13 +1,23 @@
-import '../common/PokedexLayout.css';
+import React from 'react';
 
-const Header = ({ isDarkMode, toggleDarkMode }) => {
+interface HeaderProps {
+  isDarkMode: boolean;
+  toggleDarkMode: () => void;
+}
+
+const Header: React.FC<HeaderProps> = ({ isDarkMode, toggleDarkMode }) => {
   return (
     <div>
       <img className='background_header' src="/media/top.png" alt="layout_header" />
-      <button 
-      className='button_darkmode'
-      onClick={toggleDarkMode}>
-        <img className='img_darkmode_button'  src={isDarkMode ? '/media/bx-sun.svg' : '/media/bx-moon.svg'} alt="" />
+      <button
+        className='button_darkmode'
+        onClick={toggleDarkMode}
+      >
+        <img
+          className='img_darkmode_button'
+          src={isDarkMode ? '/media/bx-sun.svg' : '/media/bx-moon.svg'}
+          alt=""
+        />
       </button>
       <img className='background_header_logo' src="/media/pokedex.png" alt="" />
     </div>
