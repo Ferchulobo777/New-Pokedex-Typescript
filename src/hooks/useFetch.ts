@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unsafe-argument */
 import axios from "axios";
 import { useState } from "react";
 

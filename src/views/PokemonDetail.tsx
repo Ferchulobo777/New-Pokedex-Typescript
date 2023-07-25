@@ -3,22 +3,46 @@ import useFetch from '../hooks/useFetch';
 import { useEffect } from 'react';
 import '../views/styles/PokemonDetail.css';
 
-const PokemonDetail = () => {
-  const { name } = useParams();
+interface Pokemon {
+  name: string;
+  id: number;
+  weight: number;
+  height: number;
+  types: {
+    type: {
+      name: string;
+      url: string;
+    };
+  }[];
+  sprites?: {
+    other: {
+      'official-artwork': {
+        front_default: string;
+      };
+    };
+  };
+}
+
+interface PokemonDetailParams {
+  name: string;
+}
+
+const PokemonDetail: React.FC = () => {
+  const { name } = useParams<PokemonDetailParams>();
 
   const url = `https://pokeapi.co/api/v2/pokemon/${name}`;
-  const [pokemon, getPokemonByName, hasError] = useFetch(url);
+  const [pokemon, getPokemonByName, hasError] = useFetch<Pokemon>(url);
 
   useEffect(() => {
     getPokemonByName();
   }, [name]);
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const handleClickNavigate = () => {
-     navigate('/pokedex');
-  }
-
+    navigate('/pokedex');
+  };
+  
   return (
     <>
     <button 

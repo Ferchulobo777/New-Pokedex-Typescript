@@ -1,4 +1,4 @@
-import { createBrowserRouter, Routes, Route, Outlet } from 'react-router-dom';
+import { createBrowserRouter } from 'react-router-dom';
 import PokedexLayout from '../common/PokedexLayout';
 import ProtectedRoutes from '../views/ProtectedRoutes';
 import Home from '../views/Home';

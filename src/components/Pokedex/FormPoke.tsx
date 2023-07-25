@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
 import { useRef, FormEvent, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import useFetch from '../../hooks/useFetch';
@@ -10,13 +9,18 @@ interface FormPokeProps {
   setCurrentPage: (page: number) => void;
 }
 
+interface PokemonType {
+  url: string;
+  name: string;
+}
+
 const FormPoke: React.FC<FormPokeProps> = ({ setFormUrl, urlBase, setCurrentPage }) => {
   const inputPoke = useRef<HTMLInputElement>(null);
 
   const navigate = useNavigate();
 
   const url = 'https://pokeapi.co/api/v2/type/';
-  const [types, getAllTypes] = useFetch<{ results: { url: string; name: string }[] }>(url);
+  const [types, getAllTypes] = useFetch<{ results: PokemonType[] }>(url);
 
   useEffect(() => {
     void getAllTypes();
@@ -44,17 +48,17 @@ const FormPoke: React.FC<FormPokeProps> = ({ setFormUrl, urlBase, setCurrentPage
         </form>
       </div>
       <select className='select_pokedex' onChange={handleChange}>
-      <option value={urlBase}>All Pokemons</option>
-      {types?.results.map((type: { url: string; name: string }) => (
-        <option
-          key={type.name}
-          value={type.url}
-          className={`option_pokedex color-${type.name}`}
-        >
-          {type.name}
-        </option>
-      ))}
-    </select>
+        <option value={urlBase}>All Pokemons</option>
+        {types?.results.map((type: PokemonType) => (
+          <option
+            key={type.name}
+            value={type.url}
+            className={`option_pokedex color-${type.name}`}
+          >
+            {type.name}
+          </option>
+        ))}
+      </select>
     </div>
   );
 };
