@@ -1,4 +1,5 @@
-import React, { useRef, FormEvent, useEffect } from 'react';
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+import { useRef, FormEvent, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import useFetch from '../../hooks/useFetch';
 import '../../views/styles/Pokedex.css';
@@ -15,16 +16,18 @@ const FormPoke: React.FC<FormPokeProps> = ({ setFormUrl, urlBase, setCurrentPage
   const navigate = useNavigate();
 
   const url = 'https://pokeapi.co/api/v2/type/';
-  const [types, getAllTypes] = useFetch(url);
+  const [types, getAllTypes] = useFetch<{ results: { url: string; name: string }[] }>(url);
 
   useEffect(() => {
-    getAllTypes();
+    void getAllTypes();
   }, []);
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    const path = `/pokedex/${(inputPoke.current?.value.trim().toLowerCase() as string)}`;
-    navigate(path);
+    if (inputPoke.current) {
+      const path = `/pokedex/${inputPoke.current.value.trim().toLowerCase()}`;
+      navigate(path);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -41,17 +44,17 @@ const FormPoke: React.FC<FormPokeProps> = ({ setFormUrl, urlBase, setCurrentPage
         </form>
       </div>
       <select className='select_pokedex' onChange={handleChange}>
-        <option value={urlBase}>All Pokemons</option>
-        {types?.results.map((type: { url: string; name: string }) => (
-          <option
-            key={type.name} // Usamos 'name' en lugar de 'url' para la clave del mapeo
-            value={type.url}
-            className={`option_pokedex color-${type.name}`}
-          >
-            {type.name}
-          </option>
-        ))}
-      </select>
+      <option value={urlBase}>All Pokemons</option>
+      {types?.results.map((type: { url: string; name: string }) => (
+        <option
+          key={type.name}
+          value={type.url}
+          className={`option_pokedex color-${type.name}`}
+        >
+          {type.name}
+        </option>
+      ))}
+    </select>
     </div>
   );
 };

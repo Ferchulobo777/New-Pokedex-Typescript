@@ -1,15 +1,21 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import useFetch from '../../hooks/useFetch';
 import PokemonCard from '../Pokedex/PokemonCard';
-import './styles/Evolutions.css'
+import './styles/Evolutions.css';
 
-const Evolutions = () => {
-  const [pokemonsGroup, setPokemonsGroup] = useState([]);
-  const { name } = useParams();
+interface PokemonSpecies {
+  evolution_chain: {
+    url: string;
+  };
+}
+
+const Evolutions: React.FC = () => {
+  const [pokemonsGroup, setPokemonsGroup] = useState<string[]>([]);
+  const { name } = useParams<{ name: string }>();
   const url = `https://pokeapi.co/api/v2/pokemon-species/${name}/`;
 
-  const [pokemonSpecies, getPokemonSpecies] = useFetch(url);
+  const [pokemonSpecies, getPokemonSpecies] = useFetch<PokemonSpecies>(url);
 
   useEffect(() => {
     getPokemonSpecies();
@@ -22,11 +28,11 @@ const Evolutions = () => {
     }
   }, [pokemonSpecies]);
 
-  const fetchEvolutionChain = (url) => {
+  const fetchEvolutionChain = (url: string) => {
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
-        const group = [];
+        const group: string[] = [];
         group.push(data.chain.species.name);
         if (data.chain.evolves_to.length !== 0) {
           group.push(data.chain.evolves_to[0].species.name);
