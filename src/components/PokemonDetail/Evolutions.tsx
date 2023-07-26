@@ -10,8 +10,12 @@ interface PokemonSpecies {
   };
 }
 
+interface Pokemon {
+  name: string;
+}
+
 const Evolutions: React.FC = () => {
-  const [pokemonsGroup, setPokemonsGroup] = useState<string[]>([]);
+  const [pokemonsGroup, setPokemonsGroup] = useState<Pokemon[]>([]);
   const { name } = useParams<{ name: string }>();
   const url = `https://pokeapi.co/api/v2/pokemon-species/${name}/`;
 
@@ -32,12 +36,12 @@ const Evolutions: React.FC = () => {
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
-        const group: string[] = [];
-        group.push(data.chain.species.name);
+        const group: Pokemon[] = [];
+        group.push({ name: data.chain.species.name });
         if (data.chain.evolves_to.length !== 0) {
-          group.push(data.chain.evolves_to[0].species.name);
+          group.push({ name: data.chain.evolves_to[0].species.name });
           if (data.chain.evolves_to[0].evolves_to.length !== 0) {
-            group.push(data.chain.evolves_to[0].evolves_to[0].species.name);
+            group.push({ name: data.chain.evolves_to[0].evolves_to[0].species.name });
           }
         }
         setPokemonsGroup(group);
@@ -48,7 +52,7 @@ const Evolutions: React.FC = () => {
   return (
     <div className='container_evolutions'>
       {pokemonsGroup.map((pokemon, index) => (
-        <PokemonCard className='card_evolution' name={name} key={index} url={`https://pokeapi.co/api/v2/pokemon/${pokemon}/`} />
+        <PokemonCard className='card_evolution' name={name} key={index} url={`https://pokeapi.co/api/v2/pokemon/${pokemon.name}/`} />
       ))}
     </div>
   );

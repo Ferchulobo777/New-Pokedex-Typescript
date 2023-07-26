@@ -29,20 +29,16 @@ const Movements: React.FC = () => {
   }, [name, getPokemon]);
 
   return (
-    <>
-      {
-        <div className="container_movements">
-          {pokemon?.moves.map((move: Move) => (
-            <div
-              className={`container_movements_gral bg_pokemon_detail bg-${pokemon?.types[0].type.name} border-${pokemon?.types[0].type.name}`}
-              key={move.move.name}
-            >
-              <div className="container_movements_individual">{move.move.name}</div>
-            </div>
-          ))}
+    <div className="container_movements">
+      {pokemon?.moves.map((move: Move) => (
+        <div
+          className={`container_movements_gral bg_pokemon_detail bg-${pokemon?.types[0].type.name} border-${pokemon?.types[0].type.name}`}
+          key={move.move.name}
+        >
+          <div className="container_movements_individual">{move.move.name}</div>
         </div>
-      }
-    </>
+      ))}
+    </div>
   );
 };
 

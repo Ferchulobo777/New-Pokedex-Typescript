@@ -4,7 +4,7 @@ const trainerNameSlice = createSlice({
     name: 'trainerName',
     initialState: '',
     reducers: {
-        setTrainerName: (state, action) => action.payload
+        setTrainerName: (_state, action) => action.payload
     }
 })
 

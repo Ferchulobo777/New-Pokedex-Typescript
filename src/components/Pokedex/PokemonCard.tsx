@@ -46,10 +46,10 @@ const PokemonCard: React.FC<PokemonCardProps> = ({ url }) => {
     setTimeout(() => {
       setLoading(false);
     }, 1000);
-  }, []);
+  }, [getPokemonById]);
 
   const navigate = useNavigate();
-  const handleClick = (e: React.MouseEvent) => {
+  const handleClick = () => {
     navigate(`/pokedex/${pokemon?.name}`);
   };
 

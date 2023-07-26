@@ -38,7 +38,7 @@ const Stats: React.FC = () => {
                 {pokeStat.base_stat} / 150
               </span>
             </div>
-            <progress className={`progress__bar`} value={pokeStat.base_stat} max="100"></progress>
+            <progress className={`progress__bar`} value={pokeStat.base_stat} max="150"></progress>
           </li>
         ))}
       </ul>

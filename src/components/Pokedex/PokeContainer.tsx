@@ -6,14 +6,11 @@ import './styles/PokeContainer.css';
 
 interface Pokemon {
   url: string;
-  pokemon: {
-    url: string;
-  };
 }
 
 interface PokemonsResponse {
   results?: Pokemon[];
-  pokemon?: Pokemon[];
+  pokemon?: { pokemon: Pokemon }[];
 }
 
 interface PokeContainerProps {

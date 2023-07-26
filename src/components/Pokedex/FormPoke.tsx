@@ -1,4 +1,4 @@
-import { useRef, FormEvent, useEffect } from 'react';
+import React, { useRef, FormEvent, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import useFetch from '../../hooks/useFetch';
 import '../../views/styles/Pokedex.css';
@@ -26,7 +26,7 @@ const FormPoke: React.FC<FormPokeProps> = ({ setFormUrl, urlBase, setCurrentPage
     void getAllTypes();
   }, []);
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (inputPoke.current) {
       const path = `/pokedex/${inputPoke.current.value.trim().toLowerCase()}`;
