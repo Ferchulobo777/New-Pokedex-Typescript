@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unsafe-return */
 import { createSlice } from "@reduxjs/toolkit";
 
 const trainerNameSlice = createSlice({

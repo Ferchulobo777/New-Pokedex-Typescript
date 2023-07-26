@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/restrict-template-expressions */
 import { useParams, NavLink, Outlet, useNavigate } from 'react-router-dom';
 import useFetch from '../hooks/useFetch';
 import { useEffect } from 'react';
